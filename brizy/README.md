@@ -2,9 +2,9 @@
 
 Contributors: themefuse<br>
 Requires at least: 4.5<br>
-Tested up to: 6.4.2<br>
+Tested up to: 6.4.3<br>
 Requires PHP: 7.0.0<br>
-Stable tag: 2.4.38<br>
+Stable tag: 2.4.40<br>
 License: GPLv3<br>
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -135,6 +135,47 @@ $bodyHtml = apply_filters( 'brizy_content', $html->get_body(), Brizy_Editor_Proj
 [Privacy policy](https://brizy.io/privacy/)
 
 ## Changelog
+
+### 2.4.40 - 2024-02-07
+* New: Help video functionality inside the builder
+* New: Added variable fonts 
+* New: Text highlight color  
+* Improved: Custom Attributes position in the right sidebar
+* Improved: Include Global Style when saving layouts 
+* Improved: Toolbar options arrow position on Rows
+* Improved: Extract React from editor build, and add this as standalone script in HTML 
+* Improved: Disable shorten/extend actions for AI text in some cases
+* Improved: Drag and drop for Icons and Buttons 
+* Improved: Tabs UI colors in right sidebar
+* Fixed: Progress bar comes out of the wrapper 
+* Fixed: Text Link option pasted value doesn't save if instantly closing toolbar 
+* Fixed: Video player won't extend on mobile on IOS
+* Fixed: Form Select arrow 
+* Fixed: Column align when Effects are enabled 
+* Fixed: Writing long texts in Form fields 
+* Fixed: Video element crashed when imported with a block
+* Fixed: Column alignment doesn't work on Auto distribute option  
+* Fixed: Toolbar css issue when searching a Collection Type name
+* Fixed: Copy Styles don't apply for Dynamic Content Rich Text 
+* Fixed: Background button and icon hover color didn't match preview
+* Fixed: Video background for blocks and columns unable to pause
+
+### 2.4.39 - 2024-01-17
+ * New: Add Right Click Context Menu to Tabs Element 
+ * New: Added tooltip message when saving draft pages 
+ * Improvement: Speed when searching pages URL for Links 
+ * Improvement: Reduced file size of the Client API 
+ * Improvement: UI Translation 
+ * Fixed: Link To option loses focus 
+ * Fixed: Icon Background corner is not active 
+ * Fixed: Save selected Page in Link option on any Text element
+ * Fixed: Scroll in toolbara and typography is not working when parallax effect is set 
+ * Fixed: Some Saved Blocks thumbnails are not displayed 
+ * Fixed: Styling Dividers Show thin line on some mobile devices 
+ * Fixed: Background color on hover "Get a pro Plan" button 
+ * Fixed: Drag & Drop for Posts, Accordion Tab elements 
+ * Fixed: Drag & Drop Lines remain active randomly
+ * Fixed: Padding bottom for Video with Cover Image 
 
 ### 2.4.38 - 2023-12-28
 * Fixed: Small layout fixes in templates
