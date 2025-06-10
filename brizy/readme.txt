@@ -2,9 +2,9 @@
 Contributors: themefuse
 Tags: page builder, website builder, brizy, editor, visual editor, unyson, wysiwyg, landing page, drag-and-drop, design, landing page builder, front-end builder
 Requires at least: 4.5
-Tested up to: 6.7.2
+Tested up to: 6.8.1
 Requires PHP: 7.2.24
-Stable tag: 2.6.13
+Stable tag: 2.6.22
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -132,6 +132,46 @@ Don't worry if you make a mistake or delete something that you shouldn't have. W
 11. **Resize columns by dragging the handle that appears in between**
 
 == Changelog ==
+
+= 2.6.22 - 2025-06-10 =
+* Improved: Enhanced performance for image resizing.
+
+= 2.6.21 - 2025-05-28 =
+* Fixed: Check if the current user can "list_users" on Posts component
+
+= 2.6.20 - 2025-05-28 =
+* Fixed: Removed all user sensitive info from user list endpoint
+
+= 2.6.19 - 2025-05-26 =
+* Fixed: Image UID validation
+
+= 2.6.18 - 2025-05-13 =
+* New: Add a hover image to the Image element
+* New: Image titles now show up in the preview
+* Improved: Leaner HTML for buttons, icons, rows, columns and sections
+* Improved: Better right-to-left (RTL) editing
+* Fixed: Dynamic and hover background images display correctly
+* Fixed: Button hover colors save as expected
+* Fixed: Progress bars without a percentage preview properly
+* Fixed: Button text no longer gets cut off on small screens
+* Fixed: Style copy-and-paste works on tablet and mobile
+* Fixed: Rich-text option list works in Story mode
+* Fixed: No more crashes when adding a new font
+* Fixed: Variable-font weight tab shows correctly
+* Fixed: Context menu appears on responsive views
+* Fixed: Parallax effect no longer conflicts with other plugins
+
+= 2.6.17 - 2025-04-23 =
+* Fixed: Force page recompilation
+
+= 2.6.16 - 2025-04-22 =
+* Fixed: Internal page links
+
+= 2.6.15 - 2025-04-17 =
+* Fixed: Not all weights in Fonts tab for Adobe Fonts
+
+= 2.6.14 - 2025-03-20 =
+* Fixed: Squirrly SEO plugin compatibility
 
 = 2.6.13 - 2025-03-13 =
 * Fixed: Elements not displayed in preview
