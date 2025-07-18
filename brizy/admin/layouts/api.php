@@ -198,7 +198,7 @@ class Brizy_Admin_Layouts_Api extends Brizy_Admin_AbstractApi
             $layout->setMedia(stripslashes($this->param('media')));
             $layout->setMeta(stripslashes($this->param('meta')));
             $layout->setGlobalStyles(stripslashes($this->param('globalStyles')));
-            $layout->set_editor_data($editorData);
+            $layout->setEditorData($editorData);
             $layout->set_needs_compile(true);
 
             if ($this->param('title')) {
@@ -215,7 +215,6 @@ class Brizy_Admin_Layouts_Api extends Brizy_Admin_AbstractApi
             $layout->save();
 
             do_action('brizy_layout_created', $layout);
-            do_action('brizy_global_data_updated');
 
             $this->success($layout->createResponse());
 
@@ -255,7 +254,7 @@ class Brizy_Admin_Layouts_Api extends Brizy_Admin_AbstractApi
                 $layout->setMeta(stripslashes($this->param('meta')));
             }
             if ($this->param('data')) {
-                $layout->set_editor_data(stripslashes($this->param('data')));
+                $layout->setEditorData(stripslashes($this->param('data')));
             }
             if ($this->param('title')) {
                 $layout->setTitle(stripslashes($this->param('title')));
@@ -276,7 +275,6 @@ class Brizy_Admin_Layouts_Api extends Brizy_Admin_AbstractApi
             } else {
                 $layout->save();
                 do_action('brizy_layout_updated', $layout);
-                do_action('brizy_global_data_updated');
             }
 
             $this->success($layout->createResponse());
