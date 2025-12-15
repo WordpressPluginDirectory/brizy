@@ -19,6 +19,7 @@ import {
   CreateIntegrationAccountData,
   CreateIntegrationListData,
   FormData as FormDataType,
+  IntegrationType,
   IntegrationAccountApiKeyResponse,
   IntegrationAccountResponse,
   IntegrationResponse,
@@ -50,7 +51,11 @@ import { IconUploadData } from "@/types/Icon";
 import { Page } from "@/types/Page";
 import { Rule } from "@/types/PopupConditions";
 import { Project } from "@/types/Project";
-import { ResponseWithBody, SuccessResponse } from "@/types/Response";
+import {
+  ResponseWithBody,
+  ResponseWithSuccessStatus,
+  SuccessResponse
+} from "@/types/Response";
 import {
   CreateSavedBlock,
   CreateSavedLayout,
@@ -1532,6 +1537,40 @@ export const updateGlobalBlocks = async (
   }
 };
 
+export const deleteGlobalBlock = async (
+  uid: string
+): Promise<ResponseWithSuccessStatus> => {
+  const config = getConfig();
+
+  if (!config) {
+    throw new Error(t("Invalid __BRZ_PLUGIN_ENV__"));
+  }
+
+  const { url, hash, actions, editorVersion } = config;
+  const _url = makeUrl(url, {
+    hash,
+    action: actions.deleteGlobalBlock,
+    version: editorVersion,
+    uid
+  });
+
+  try {
+    const d = await request(_url, {
+      method: "POST"
+    });
+
+    if (!d.ok) {
+      throw new Error(t("Failed to delete global block"));
+    }
+
+    const data = await d.json();
+
+    return data;
+  } catch (e) {
+    throw new Error(t("Failed to delete global block"));
+  }
+};
+
 //#endregion
 
 //#region CustomIcon
@@ -1753,7 +1792,7 @@ export const getDefaultLayoutsPages = async (
 ): Promise<LayoutsPagesResult> => {
   const fullUrl = makeUrl(url, {
     project_id: id,
-    per_page: "20"
+    per_page: "50"
   });
 
   const response = await request(fullUrl, {
@@ -2607,9 +2646,14 @@ export const getForm = async (formId: string): Promise<FormDataType> => {
   });
 
   const { status, success, data } = await getResponseData(r);
-
   if (success) {
-    return data;
+    return {
+      ...data,
+      integrationList: data.integrations.map((integration: IntegrationType) => ({
+        ...integration,
+        type: integration.id
+      }))
+    };
   }
 
   if (status === 404) {
